@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scores</title>
+    <title>Manage Trip</title>
     <link rel="icon" href="favicon.ico" />
 
     <link rel="stylesheet" href="main.css" />
@@ -16,6 +16,7 @@
       crossorigin="anonymous"
     />
   </head>
+
   <body class="bg-dark text-light">
     <header class="container-fluid">
       <nav class="navbar fixed-top navbar-dark">
@@ -34,37 +35,150 @@
       </nav>
     </header>
 
-    <main class="container-fluid bg-secondary text-center">
-      <table class="table table-warning table-striped-columns">
+    <main class="container-fluid bg-secondary text-left">
+      <div>
+        <h2>Colorado Trip</h2>
+        <p>Organizer: Jason D.</p>
+        <p>Participants: 6</p>
+        <form action="trip.html">
+          <button type="button" class="btn btn-primary">Add/Delete Participants</button>
+        </form>
+        <br>
+      </div>
+      <table class = "menu_table">
+        <colgroup>
+          <col span="1" style="width: 17%;">
+          <col span="1" style="width: 15%;">
+          <col span="1" style="width: 8%;">
+          <col span="1" style="width: 10%;">
+          <col span="1" style="width: 40%;">
+        </colgroup>
         <thead class="table-dark">
           <tr>
-            <th>Player #</th>
-            <th>Name</th>
-            <th>Score</th>
+            <th>Expense</th>
+            <th>Paid By</th>
+            <th>Amount</th>
             <th>Date</th>
+            <th>Description</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>1</td>
-            <td>Daniel</td>
-            <td>50</td>
-            <td>2/8/2023</td>
+            <td>Airbnb</td>
+            <td>Jason D.</td>
+            <td>$785.45</td>
+            <td>March 3, 2023</td>
+            <td>For staying the night of the 12th and 13th</td>
           </tr>
           <tr>
-            <td>2</td>
-            <td>Motoki</td>
-            <td>60</td>
-            <td>2/8/2023</td>
+            <td>Gas</td>
+            <td>Michelle P.</td>
+            <td>$81.98</td>
+            <td>March 9, 2023</td>
+            <td></td>
           </tr>
           <tr>
-            <td>3</td>
-            <td>Luke</td>
-            <td>999</td>
-            <td>2/8/2023</td>
+            <td>Food</td>
+            <td>Drew L.</td>
+            <td>$50.60</td>
+            <td>March 10, 2023</td>
+            <td>Breakfast burritos, sandwiches</td>
+          </tr>
+          <tr>
+            <td>Ski Passes</td>
+            <td>Julie C.</td>
+            <td>$480.00</td>
+            <td>March 15, 2023</td>
+            <td>Managed to get discounts!</td>
+          </tr>
+          <tr>
+            <td>Hot Chocolate</td>
+            <td>Michelle P.</td>
+            <td>$25.00</td>
+            <td>March 15, 2023</td>
+            <td></td>
           </tr>
         </tbody>
       </table>
+      <div>
+        <br>
+        <form action="trip.html">
+          <button type="button" class="btn btn-primary">Add Expense</button>
+        </form>
+        <br>
+        <form action="trip.html">
+          <button type="button" class="btn btn-primary">Calculate Total</button>
+        </form>
+        <br>
+      </div>
+      <div>
+        <h3>Total Expense: $1,423.03</h3>
+        <h3>Cost per Participant: $237.17</h3>
+      </div>
+      <p>Breakdown for all participants:</p>
+      <div>
+        <table class = "menu_table">
+          <colgroup>
+            <col span="1" style="width: 25%;">
+            <col span="1" style="width: 10%;">
+            <col span="1" style="width: 25%;">
+            <col span="1" style="width: 10%;">
+          </colgroup>
+          <thead class="table-dark">
+            <tr>
+              <th>Payer</th>
+              <th></th>
+              <th>Payee</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Jason D.</td>
+              <td></td>
+              <td></td>
+              <td>$0.00</td>
+            </tr>
+            <tr>
+              <td>Michelle P.</td>
+              <td>owes</td>
+              <td>Jason D.</td>
+              <td>$73.94</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>Julie C.</td>
+              <td>$56.25</td>
+            </tr>
+            <tr>
+              <td>Drew L.</td>
+              <td>owes</td>
+              <td>Julie C.</td>
+              <td>$186.57</td>
+            </tr>
+            <tr>
+              <td>Julie C.</td>
+              <td></td>
+              <td></td>
+              <td>$0.00</td>
+            </tr>
+            <tr>
+              <td>Kerry D.</td>
+              <td>owes</td>
+              <td>Jason D.</td>
+              <td>$237.17</td>
+            </tr>
+            <tr>
+              <td>Angela Z.</td>
+              <td>owes</td>
+              <td>Jason D.</td>
+              <td>$237.17</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br><br>
     </main>
 
     <footer class="bg-dark text-dark text-muted">
