@@ -22,48 +22,68 @@
       <nav class="navbar fixed-top navbar-dark">
         <a class="navbar-brand" href="#">Simon<sup>&reg;</sup></a>
         <menu class="navbar-nav">
+
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Home Page</a>
+            <a class="nav-link active" href="menu.html">All Trips</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="play.html">Play Game</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="scores.html">View Scores</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About Game</a>
+            <a class="nav-link" href="index.html">Log Out</a>
           </li>
         </menu>
       </nav>
     </header>
 
-    <main class="bg-secondary">
-      <div class="players">
-        Player:
-        <span class="player-name">Mystery player</span>
-      </div>
-      <div class="game">
-        <div class="button-container">
-          <button class="button-top-left"></button>
-          <button class="button-top-right"></button>
-          <button class="button-bottom-left"></button>
-          <button class="button-bottom-right"></button>
-          <div class="controls center">
-            <div class="game-name">Simon<sup>&reg;</sup></div>
-            <div class="score center">--</div>
-            <button class="btn btn-primary">Reset</button>
-          </div>
+      <main class="container-fluid bg-secondary text-left">
+        <div>
+          <p>
+            Select an Event to Manage:
+          </p>
         </div>
-      </div>
-    </main>
+
+        <table class = "menu_table">
+          <colgroup>
+            <col span="1" style="width: 40%;">
+            <col span="1" style="width: 35%;">
+            <col span="1" style="width: 20%;">
+            <col span="1" style="width: 20%;">
+          </colgroup>
+          <thead class="table-dark">
+            <tr>
+              <th>Event</th>
+              <th>Date</th>
+              <th>Organizer</th>
+              <th>Participants</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a class="nav-link trip" href="trip.html">Colorado Trip</a></td>
+              <td>March 3, 2023</td>
+              <td>Jason D.</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td><a class="nav-link trip" href="trip.html">Moab Trip</a></td>
+              <td>March 10, 2023</td>
+              <td>Jason D.</td>
+              <td>18</td>
+            </tr>
+            <tr>
+              <td><a class="nav-link trip" href="trip.html">Jenny's Wedding Road Trip</a></td>
+              <td>March 28, 2023</td>
+              <td>Jason D.</td>
+              <td>4</td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
 
     <footer class="bg-dark text-dark text-muted">
       <div class="container-fluid">
         <span class="text-reset">Authored by Daniel Luke</span>
         <a
           class="text-reset"
-          href="https://github.com/dluke2/simon"
+          href="https://github.com/dluke2/startup.git"
           >Source</a
         >
       </div>
