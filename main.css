@@ -141,4 +141,22 @@ table td{
   color: #212429;
   transition: 1.0s;
 }
-  
+
+.dollar-value::before {
+  content: "$";
+}
+
+.expense > td {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: black;
+}
+
+.delete-expense-button {
+  background-color: rgb(177, 4, 4) !important;
+  cursor: pointer;
+}
+
+.delete-expense-button:hover {
+  background-color:red !important;
+  transition: 1.0s;
+}

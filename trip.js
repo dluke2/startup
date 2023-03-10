@@ -24,7 +24,7 @@ function getNewExpenseElement() {
     <td contenteditable="true">Expense ${expenseNumber}</td>
     <td contenteditable="true" class="expense-payer" id="expense-payer-${expenseNumber}">Payer ${expenseNumber}</td>
     <td contenteditable="true" class="dollar-value expense-amount" id="expense-amount-${expenseNumber}"></td>
-    <td contenteditable="true">${monthNames[date.getMonth()]} ${date.getDay()}, ${date.getFullYear()}</td>
+    <td contenteditable="true">${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}</td>
     <td contenteditable="true">Description of expense ${expenseNumber}</td>
     <td class="delete-expense-button" id="delete-expense-${expenseNumber}"></td>
   `;
