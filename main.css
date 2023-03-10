@@ -20,6 +20,13 @@ footer {
   flex: 0 30px;
 }
 
+p {
+  font-style: normal; 
+}
+
+h1, h2, h3 {
+  font-style: normal; 
+}
 p.same_line {
   display: inline-block;
   vertical-align: top;
