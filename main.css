@@ -20,6 +20,12 @@ footer {
   flex: 0 30px;
 }
 
+p.same_line {
+  display: inline-block;
+  vertical-align: top;
+  padding-right: 10px;
+}
+
 menu {
   flex: 1;
   display: flex;
