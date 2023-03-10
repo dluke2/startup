@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simon</title>
     <link rel="icon" href="favicon.ico" />
-
+    <script src="login.js"></script>
+    <script src="menu.js"></script>
     <link rel="stylesheet" href="main.css" />
 
     <!-- Include bootstrap CSS framework -->
@@ -77,9 +78,21 @@
           </tbody>
         </table>
         <div>
-          <form action="trip.html">
-            <button type="button" class="btn btn-primary">Create New Trip</button>
+          <form method="get">
+            <input type="text" id="event_name" placeholder="Event Name" />
           </form>
+          <form method="get">
+            <input type="text" id="event_date" placeholder="Event Start Date" />
+          </form>
+          <form method="get">
+            <input type="text" id="organizer_name" placeholder="Trip Organizer" />
+          </form>
+          <form>
+            <button type="button" class="btn btn-primary" onclick="gatherNewTripInfo()">Create New Trip</button>
+          </form>
+        </div>
+        <div>
+          <p class="test"></p>
         </div>
       </main>
 
