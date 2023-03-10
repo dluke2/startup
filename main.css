@@ -61,52 +61,6 @@ footer a {
   color: #243500;
 }
 
-.game {
-  background: rgb(0, 0, 0);
-  border-radius: 50%;
-  box-shadow: 0 0 20px 5px rgb(69, 69, 69);
-  width: 80vw;
-  height: 80vw;
-  position: absolute;
-  min-width: 350px;
-  min-height: 350px;
-  max-width: min(80vmin, 1000px);
-  max-height: min(80vmin, 1000px);
-}
-
-
-.controls {
-  position: absolute;
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  background-color: black;
-  padding: 2em;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: column;
-}
-
-.game-name {
-  font-size: 2em;
-  font-weight: bold;
-  margin-bottom: 0.5em;
-}
-
-
-@media (max-height: 600px) {
-  header {
-    display: none;
-  }
-  footer {
-    display: none;
-  }
-  main {
-    flex: 1 100vh;
-  }
-}
-
 .btn.btn-primary {
   background-color: #008000;
   border-color: #243500;

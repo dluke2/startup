@@ -59,10 +59,10 @@ ready(() => {
         payersAndValues.set(payer.textContent, existingValue + amount);
       }
     }
-    document.querySelector('#total-cost').textContent = (isNaN(total) ? "Make sure your amounts are all numbers" : total);
-    document.querySelector('#per-person-cost').textContent = (isNaN(total) ? "Make sure your amounts are all numbers" : total / payersAndValues.size);
+    document.querySelector('#total-cost').textContent = (isNaN(total) ? "Make sure your amounts are all numbers" : Math.round((total + Number.EPSILON)*100)/100);
+    document.querySelector('#per-person-cost').textContent = (isNaN(total) ? "Make sure your amounts are all numbers" : Math.round(((total/payersAndValues.size) + Number.EPSILON)*100)/100);
 
-    for (let line of document.querySelectorAll('.breakdown-line')) {
+    for (let line of document.querySelectorAll('.breakdown-line')) {  
       line.remove();
     }
 
@@ -71,7 +71,7 @@ ready(() => {
     for (let key of payersAndValues.keys()) {
       var value = payersAndValues.get(key);
       console.log(value);
-      var string = key + ' needs to ' + ((average > value) ? 'give $' : 'receive $') + Math.abs(average - value);
+      var string = key + ' needs to ' + ((average > value) ? 'give $' : 'receive $') + Math.abs(Math.round(((average - value)+Number.EPSILON)*100)/100);
       document.querySelector('#cost-breakdown').appendChild(getNewBreakdownElement(string));
     }
     document.querySelector('#participant-number').textContent = payersAndValues.size;
