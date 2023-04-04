@@ -51,3 +51,5 @@ function login() {
     
 Startup JavaScript: I struggled to make this work, I ended up having to change the way I wanted to do things. I struggled a lot with the math elements. I wanted to assign who would pay who, but this became a mess. It was easier just to determine how much everyone owed, which reduces the usefulness of the calculator. 
 Luckily, the assignments we had in CodePen helped me figure out how to create the table and helped a lot. I stubbled across the contenteditable=true feature, which made capturing data easier. I started to use a lot of forms, but that got messy. I learned that getMonth() returns the letter, so I made an array instead to get the month name.
+
+Fetch: Fetch is going to be imporant for pulling data from other sites or databases. I see the potential to make webscrapers with it.
