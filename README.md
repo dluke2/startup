@@ -53,3 +53,11 @@ Startup JavaScript: I struggled to make this work, I ended up having to change t
 Luckily, the assignments we had in CodePen helped me figure out how to create the table and helped a lot. I stubbled across the contenteditable=true feature, which made capturing data easier. I started to use a lot of forms, but that got messy. I learned that getMonth() returns the letter, so I made an array instead to get the month name.
 
 Fetch: Fetch is going to be imporant for pulling data from other sites or databases. I see the potential to make webscrapers with it.
+
+Service: I think what stood out to me was the use of post and get. The post puts the new scores into the table, which is run by index.js. This information is stored in the server in a list using the port to ensure that it persists. This is important because everything in the public folder is run on the browser. The server needs to hold the data.
+
+MongoDB: I learned about keeping keys safe. I didn't know variables could be stored in windows in the way we did. I'm pretty familiar with SQL databases, so storing objects as a JSON was something I never thought of. It makes sense thought, because you can define the attributes you need, so you don't need a bunch of null values if you're not using every attribute.
+
+Websocket: I think its interesting that connections close if too much time passes. It seems ineffecient to have to keeping pinging just to keep the connection. But I suppose it is also inefficient to keep a connection open when it is being unused.
+
+Service: I had a lot of problems because of how I made my javascript. I think I'll need to refactor the entire thing, it just doesn't lend well to connecting to MongoDB. At the very least, I was able to figure out authentification and creating users and such. Debugging things in the client is super difficult. I had a lot of trouble making sure data went into the database. I didn't realized I needed to have websocket stuff implemented, so I'll need to fix that before my final project.
