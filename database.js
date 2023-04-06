@@ -13,8 +13,8 @@ if (!userName) {
 const url = `mongodb+srv://${userName}:${password}@${hostname}`;
 
 const client = new MongoClient(url);
-const userCollection = client.db('simon').collection('user');
-const scoreCollection = client.db('simon').collection('score');
+const userCollection = client.db('login').collection('user'); //user
+const expenseCollection = client.db('data').collection('expense'); //expense
 
 function getUser(email) {
   return userCollection.findOne({ email: email });
@@ -38,17 +38,25 @@ async function createUser(email, password) {
   return user;
 }
 
-function addScore(score) {
-  scoreCollection.insertOne(score);
+async function createExpense(expense_num, paid_by, amount, date, description) {
+  const expense = {
+    expense_num: expense_num,
+    paid_by: paid_by,
+    amount: amount,
+    date: date,
+    description: description,
+  };
+  await expenseCollection.insertOne(expense)
+
+  return expense;
 }
 
-function getHighScores() {
-  const query = {};
-  const options = {
-    sort: { score: -1 },
-    limit: 10,
-  };
-  const cursor = scoreCollection.find(query, options);
+function addExpense(expense) {
+  expenseCollection.insertOne(expense);
+}
+
+function getExpense() {
+  const cursor = expenseCollection.find();
   return cursor.toArray();
 }
 
@@ -56,6 +64,6 @@ module.exports = {
   getUser,
   getUserByToken,
   createUser,
-  addScore,
-  getHighScores,
+  addExpense,
+  getExpense,
 };

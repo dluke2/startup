@@ -25,8 +25,8 @@ function getNewExpenseElement() {
     <td contenteditable="true">Expense ${expenseNumber}</td>
     <td contenteditable="true" class="expense-payer" id="expense-payer-${expenseNumber}">Payer ${expenseNumber}</td>
     <td contenteditable="true" class="dollar-value expense-amount" id="expense-amount-${expenseNumber}"></td>
-    <td contenteditable="true">${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}</td>
-    <td contenteditable="true"></td>
+    <td contenteditable="true" id="expense-date-${expenseNumber}">${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}</td>
+    <td contenteditable="true" id="expense-description-${expenseNumber}"></td>
     <td class="delete-expense-button" id="delete-expense-${expenseNumber}"></td>
   `;
   return element;
@@ -38,6 +38,8 @@ function getNewBreakdownElement(text) {
   element.innerHTML = text;
   return element;
 }
+
+//loadTableRows()
 
 ready(() => {
   var total = 0;
@@ -83,6 +85,7 @@ ready(() => {
     if (e.target.classList.contains('expense-amount') || e.target.classList.contains('expense-payer')) {
       updateCosts();
     }
+    saveTableRows();
   });
 
   document.querySelector('#expenses').addEventListener("click", function (e) {
@@ -90,9 +93,38 @@ ready(() => {
       document.getElementById('expense-' + e.target.id.charAt(e.target.id.length - 1)).remove();
       updateCosts();
     }
+    saveTableRows();
   });
   document.querySelector('#add-expense-button').addEventListener('click', function () {
     document.querySelector('#expenses').appendChild(getNewExpenseElement());
     updateCosts();
+    saveTableRows();
   });
 });
+
+function getTableRows() {
+  const rows = localStorage.getItem('tableRows');
+  if (rows) {
+    return JSON.parse(rows);
+  }
+  return [];
+}
+
+function loadTableRows() {
+  const rows = getTableRows();
+  const expenses = document.querySelector('#expenses');
+  rows.forEach((row) => {
+    expenses.appendChild(getNewExpenseElement(row));
+  });
+}
+
+function saveTableRows() {
+  const rows = Array.from(document.querySelectorAll('#expenses tr.expense')).map((expense) => {
+    return {
+      payer: expense.querySelector('.expense-payer').textContent,
+      amount: expense.querySelector('.expense-amount').textContent,
+    };
+  });
+  
+  localStorage.setItem('tableRows', JSON.stringify(rows));
+}

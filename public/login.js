@@ -49,8 +49,8 @@ async function loginOrCreate(endpoint) {
   }
 }
 
-function menu() {
-  window.location.href = 'menu.html';
+function start() {
+  window.location.href = 'trip.html';
 }
 
 function logout() {
