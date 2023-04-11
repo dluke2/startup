@@ -1,4 +1,4 @@
-# startup
+# CS-260-Web-Dev
 CS 260 Web Dev for Winter 2023
 
 Startup Application:
@@ -38,7 +38,7 @@ Simon CSS: Just getting a base for head, body, and footer are important. Once th
 
 DOM is going to be vital for my project. The code here https://codepen.io/dluke2/pen/MWqpooM?editors=1010 will help me with my startup application. I'll need to learn to read in inputs, then edit arrays with the information to modify the table.
 
-Simon-CSS: Reading in inputs is interesting. To disply what has already been inputed, I need to use the following structure. The .player_name is a class. The following JavaScript shows how to capture and display data.
+Simon-JavaScript: Reading in inputs is interesting. To display what has already been inputed, I need to use the following structure. The .player_name is a class. The following JavaScript shows how to capture and display data.
 
 function login() {
   const nameEl = document.querySelector("#name");
@@ -58,6 +58,16 @@ Service: I think what stood out to me was the use of post and get. The post puts
 
 MongoDB: I learned about keeping keys safe. I didn't know variables could be stored in windows in the way we did. I'm pretty familiar with SQL databases, so storing objects as a JSON was something I never thought of. It makes sense thought, because you can define the attributes you need, so you don't need a bunch of null values if you're not using every attribute.
 
+Login: This format is really important for creating login stuff:  
+
+fetch(`/api/auth/logout`, {
+    method: 'delete',
+  }).then(() => (window.location.href = '/'));
+  
+This is used for many different things, such as login, creating users, logging out, and so forth. My environment needs to have the proper path variables setup to access the database.
+
 Websocket: I think its interesting that connections close if too much time passes. It seems ineffecient to have to keeping pinging just to keep the connection. But I suppose it is also inefficient to keep a connection open when it is being unused.
 
 Service: I had a lot of problems because of how I made my javascript. I think I'll need to refactor the entire thing, it just doesn't lend well to connecting to MongoDB. At the very least, I was able to figure out authentification and creating users and such. Debugging things in the client is super difficult. I had a lot of trouble making sure data went into the database. I didn't realized I needed to have websocket stuff implemented, so I'll need to fix that before my final project.
+
+Simon React: Converting the code was a huge pain for me. It would have been much easier to start using React from the beginning. My take away is to start with the end in mind. Programming goes a lot smoother when I considered how to integrate each part into one another before getting started. Of course, in this case I needed to learn JS before React, but I still think it is a key mindset when it comes to development. I thought it was interesting that the React code is broken up into many more .jsx files than we had .js files initially. This actually makes looking through the code easier because we don't have to look through hundreds of lines in each file. Instead, we can better find what we are looking for and debug.
